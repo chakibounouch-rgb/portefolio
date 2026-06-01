@@ -61,6 +61,9 @@
   .btn-ghost{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.28)}
   .btn-ghost:hover{background:var(--white);color:#1A140C;box-shadow:none}
   .nav-cta{padding:11px 24px}
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .lang-btn{background:transparent;border:1px solid var(--line);color:var(--white);font-size:.78rem;font-weight:600;letter-spacing:.06em;padding:8px 14px;border-radius:999px;cursor:pointer;transition:all .25s}
+  .lang-btn:hover{border-color:var(--gold);color:var(--gold)}
   .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none}
   .burger span{width:24px;height:2px;background:var(--white);transition:.3s}
 
@@ -224,13 +227,16 @@
 <nav id="nav">
   <div class="logo">Chakib<span>.</span></div>
   <div class="nav-links">
-    <a href="#why">Why me</a>
-    <a href="#process">How I work</a>
-    <a href="#projects">Projects</a>
-    <a href="#about">About</a>
+    <a href="#why" data-fr="Pourquoi moi">Why me</a>
+    <a href="#process" data-fr="Comment je travaille">How I work</a>
+    <a href="#projects" data-fr="Projets">Projects</a>
+    <a href="#about" data-fr="À propos">About</a>
     <a href="#faq">FAQ</a>
   </div>
-  <a href="https://calendly.com/zhirichakib/30min" target="_blank" rel="noopener" class="btn nav-cta">Book a call</a>
+  <div class="nav-right">
+    <button id="langBtn" class="lang-btn" onclick="toggleLang()">FR</button>
+    <a href="https://calendly.com/zhirichakib/30min" target="_blank" rel="noopener" class="btn nav-cta" data-fr="Réserver un appel">Book a call</a>
+  </div>
   <button class="burger" onclick="var n=document.querySelector('.nav-links');n.style.cssText='display:flex;position:absolute;top:60px;right:28px;flex-direction:column;background:var(--panel);padding:20px 28px;border-radius:16px;box-shadow:0 20px 50px -20px rgba(0,0,0,.6);gap:18px';">
     <span></span><span></span><span></span>
   </button>
@@ -240,15 +246,15 @@
 <header class="hero">
   <div class="hero-media"><img src="assets/merinide/1.png" alt="Premium AI fashion shoot"></div>
   <div class="hero-inner">
-    <div class="tag">AI Video Creator · Creative Strategist · Paris</div>
-    <h1>Premium AI videos, shoots & models that <em>convert.</em></h1>
-    <p class="sub">High-end advertising content for e-commerce brands. Delivered in 7 days — no studio, no hassle.</p>
+    <div class="tag" data-fr="Créateur Vidéo IA · Stratège Créatif · Paris">AI Video Creator · Creative Strategist · Paris</div>
+    <h1 data-fr="Vidéos, shootings & mannequins IA premium qui <em>convertissent.</em>">Premium AI videos, shoots & models that <em>convert.</em></h1>
+    <p class="sub" data-fr="Du contenu publicitaire haut de gamme pour les marques e-commerce. Livré en 7 jours — sans studio, sans contrainte.">High-end advertising content for e-commerce brands. Delivered in 7 days — no studio, no hassle.</p>
     <div class="hero-actions">
-      <a href="https://calendly.com/zhirichakib/30min" target="_blank" rel="noopener" class="btn">Book a call →</a>
-      <a href="#projects" class="btn btn-ghost">See my work</a>
+      <a href="https://calendly.com/zhirichakib/30min" target="_blank" rel="noopener" class="btn" data-fr="Réserver un appel →">Book a call →</a>
+      <a href="#projects" class="btn btn-ghost" data-fr="Voir mes réalisations">See my work</a>
     </div>
   </div>
-  <div class="scroll-cue">Scroll ↓</div>
+  <div class="scroll-cue" data-fr="Défiler ↓">Scroll ↓</div>
 </header>
 
 <!-- TRUST -->
@@ -267,42 +273,42 @@
   <div class="wrap">
     <div class="why-head reveal">
       <div>
-        <div class="eyebrow">Why me</div>
-        <h2 class="sec-title">Why <em>work with me.</em></h2>
+        <div class="eyebrow" data-fr="Pourquoi moi">Why me</div>
+        <h2 class="sec-title" data-fr="Pourquoi <em>travailler avec moi.</em>">Why <em>work with me.</em></h2>
       </div>
-      <p class="sec-intro">All the quality of a premium production — without the budget, the lead times and the logistics of a traditional shoot. Just content that's ready to convert.</p>
+      <p class="sec-intro" data-fr="Toute la qualité d'une production premium — sans le budget, les délais et la logistique d'un shooting traditionnel. Juste du contenu prêt à convertir.">All the quality of a premium production — without the budget, the lead times and the logistics of a traditional shoot. Just content that's ready to convert.</p>
     </div>
     <div class="adv-grid">
       <div class="adv-card reveal">
         <div class="adv-top"><span class="adv-idx">01</span><span class="adv-ic"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span></div>
-        <div class="stat">7<sup>days</sup></div>
-        <h3>Express delivery</h3>
-        <p>From brief to final files in a single week. Your content ready to publish — no waiting for months.</p>
-        <div class="adv-foot">Brief approved Monday, delivered the next</div>
+        <div class="stat">7<sup data-fr="jours">days</sup></div>
+        <h3 data-fr="Livraison express">Express delivery</h3>
+        <p data-fr="Du brief aux fichiers finaux en une seule semaine. Votre contenu prêt à publier — sans attendre des mois.">From brief to final files in a single week. Your content ready to publish — no waiting for months.</p>
+        <div class="adv-foot" data-fr="Brief validé lundi, livré la semaine suivante">Brief approved Monday, delivered the next</div>
       </div>
       <div class="adv-card reveal">
         <div class="adv-top"><span class="adv-idx">02</span><span class="adv-ic"><svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h10"/></svg></span></div>
         <div class="stat">−75<sup>%</sup></div>
-        <h3>Faster turnaround</h3>
-        <p>Where a traditional shoot needs weeks of prep, casting and post, I deliver in days.</p>
+        <h3 data-fr="Délais réduits">Faster turnaround</h3>
+        <p data-fr="Là où un shooting traditionnel demande des semaines de préparation, casting et post-production, je livre en quelques jours.">Where a traditional shoot needs weeks of prep, casting and post, I deliver in days.</p>
         <div class="bars">
-          <div class="bar"><span class="bl">Traditional</span><div class="track"><i style="width:100%"></i></div><span class="bv">28d</span></div>
-          <div class="bar hi"><span class="bl">With me</span><div class="track"><i style="width:25%"></i></div><span class="bv">7d</span></div>
+          <div class="bar"><span class="bl" data-fr="Traditionnel">Traditional</span><div class="track"><i style="width:100%"></i></div><span class="bv" data-fr="28j">28d</span></div>
+          <div class="bar hi"><span class="bl" data-fr="Avec moi">With me</span><div class="track"><i style="width:25%"></i></div><span class="bv" data-fr="7j">7d</span></div>
         </div>
       </div>
       <div class="adv-card reveal">
         <div class="adv-top"><span class="adv-idx">03</span><span class="adv-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span></div>
         <div class="stat">100<sup>%</sup></div>
-        <h3>Your brand identity</h3>
-        <p>Every visual is tuned to your world: colors, mood, lighting, tone. Cohesion across every asset, guaranteed.</p>
-        <div class="adv-foot">Colors · Mood · Lighting · Tone</div>
+        <h3 data-fr="Votre identité de marque">Your brand identity</h3>
+        <p data-fr="Chaque visuel est calé sur votre univers : couleurs, ambiance, lumière, ton. Une cohérence garantie sur l'ensemble de vos contenus.">Every visual is tuned to your world: colors, mood, lighting, tone. Cohesion across every asset, guaranteed.</p>
+        <div class="adv-foot" data-fr="Couleurs · Ambiance · Lumière · Ton">Colors · Mood · Lighting · Tone</div>
       </div>
       <div class="adv-card reveal">
         <div class="adv-top"><span class="adv-idx">04</span><span class="adv-ic"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M21 4v4h-4M3 20v-4h4"/></svg></span></div>
         <div class="stat">&infin;</div>
-        <h3>Unlimited iterations</h3>
-        <p>We refine until the result is exactly right. No studio constraints, no expensive reshoots, ever.</p>
-        <div class="adv-foot">Revisions until you're 100% happy</div>
+        <h3 data-fr="Itérations illimitées">Unlimited iterations</h3>
+        <p data-fr="On affine jusqu'à ce que le résultat soit exactement juste. Aucune contrainte de studio, aucun reshoot coûteux, jamais.">We refine until the result is exactly right. No studio constraints, no expensive reshoots, ever.</p>
+        <div class="adv-foot" data-fr="Des révisions jusqu'à votre satisfaction à 100%">Revisions until you're 100% happy</div>
       </div>
     </div>
   </div>
@@ -312,15 +318,15 @@
 <section class="sec sec-2" id="process">
   <div class="wrap">
     <div class="reveal">
-      <div class="eyebrow">How I work</div>
-      <h2 class="sec-title">One brief. Seven days. <em>Content delivered.</em></h2>
-      <p class="sec-intro">A simple, transparent process — from the first conversation to the delivery of your files.</p>
+      <div class="eyebrow" data-fr="Comment je travaille">How I work</div>
+      <h2 class="sec-title" data-fr="Un brief. Sept jours. <em>Contenu livré.</em>">One brief. Seven days. <em>Content delivered.</em></h2>
+      <p class="sec-intro" data-fr="Un processus simple et transparent — de la première conversation à la livraison de vos fichiers.">A simple, transparent process — from the first conversation to the delivery of your files.</p>
     </div>
     <div class="steps">
-      <div class="step reveal"><div class="num">01</div><h3>Discovery call</h3><p>We define your goals together, your brand universe and the kind of content you need.</p></div>
-      <div class="step reveal"><div class="num">02</div><h3>Art direction</h3><p>I design the concept, visual references and storyboard tailored to your brand.</p></div>
-      <div class="step reveal"><div class="num">03</div><h3>AI production</h3><p>I create your premium AI videos, shoots and models, with revisions until you're happy.</p></div>
-      <div class="step reveal"><div class="num">04</div><h3>Delivery</h3><p>You receive your HD files, ready to publish across all your channels, in 7 days.</p></div>
+      <div class="step reveal"><div class="num">01</div><h3 data-fr="Appel découverte">Discovery call</h3><p data-fr="On définit ensemble vos objectifs, votre univers de marque et le type de contenu dont vous avez besoin.">We define your goals together, your brand universe and the kind of content you need.</p></div>
+      <div class="step reveal"><div class="num">02</div><h3 data-fr="Direction artistique">Art direction</h3><p data-fr="Je conçois le concept, les références visuelles et le storyboard adaptés à votre marque.">I design the concept, visual references and storyboard tailored to your brand.</p></div>
+      <div class="step reveal"><div class="num">03</div><h3 data-fr="Production IA">AI production</h3><p data-fr="Je crée vos vidéos, shootings et mannequins IA premium, avec des révisions jusqu'à votre satisfaction.">I create your premium AI videos, shoots and models, with revisions until you're happy.</p></div>
+      <div class="step reveal"><div class="num">04</div><h3 data-fr="Livraison">Delivery</h3><p data-fr="Vous recevez vos fichiers HD, prêts à publier sur tous vos canaux, en 7 jours.">You receive your HD files, ready to publish across all your channels, in 7 days.</p></div>
     </div>
   </div>
 </section>
@@ -329,78 +335,78 @@
 <section class="sec" id="projects">
   <div class="wrap">
     <div class="reveal">
-      <div class="eyebrow">Selected work</div>
-      <h2 class="sec-title">My latest <em>creations.</em></h2>
-      <p class="sec-intro">Shoots and campaigns for fashion, sport, swimwear and beauty brands. Click a project to see the full set of visuals.</p>
+      <div class="eyebrow" data-fr="Réalisations sélectionnées">Selected work</div>
+      <h2 class="sec-title" data-fr="Mes dernières <em>créations.</em>">My latest <em>creations.</em></h2>
+      <p class="sec-intro" data-fr="Shootings et campagnes pour des marques de mode, sport, swimwear et beauté. Cliquez sur un projet pour voir l'ensemble des visuels.">Shoots and campaigns for fashion, sport, swimwear and beauty brands. Click a project to see the full set of visuals.</p>
     </div>
 
     <div class="proj-grid">
       <article class="proj-card reveal" onclick="openProject('merinide')">
         <img src="assets/merinide/1.png" alt="Mérinide Signature" loading="lazy">
         <div class="proj-ov">
-          <span class="proj-count">3 visuals</span>
+          <span class="proj-count" data-fr="3 visuels">3 visuals</span>
           <div class="proj-name">Mérinide Signature</div>
-          <div class="proj-cat">Fashion · Art direction</div>
-          <span class="proj-link">View visuals →</span>
+          <div class="proj-cat" data-fr="Mode · Direction artistique">Fashion · Art direction</div>
+          <span class="proj-link" data-fr="Voir les visuels →">View visuals →</span>
         </div>
       </article>
       <article class="proj-card reveal" onclick="openProject('monday')">
         <img src="assets/monday/4.png" alt="Monday Swimwear" loading="lazy">
         <div class="proj-ov">
-          <span class="proj-count">7 visuals</span>
+          <span class="proj-count" data-fr="7 visuels">7 visuals</span>
           <div class="proj-name">Monday Swimwear</div>
-          <div class="proj-cat">Swimwear · AI model campaign</div>
-          <span class="proj-link">View visuals →</span>
+          <div class="proj-cat" data-fr="Swimwear · Campagne mannequin IA">Swimwear · AI model campaign</div>
+          <span class="proj-link" data-fr="Voir les visuels →">View visuals →</span>
         </div>
       </article>
       <article class="proj-card reveal" onclick="openProject('enyo')">
         <img src="assets/enyo/1.png" alt="Enyo Fightwear" loading="lazy" style="object-position:50% 8%">
         <div class="proj-ov">
-          <span class="proj-count">5 visuals</span>
+          <span class="proj-count" data-fr="5 visuels">5 visuals</span>
           <div class="proj-name">Enyo Fightwear</div>
-          <div class="proj-cat">Sport · Advertising content</div>
-          <span class="proj-link">View visuals →</span>
+          <div class="proj-cat" data-fr="Sport · Contenu publicitaire">Sport · Advertising content</div>
+          <span class="proj-link" data-fr="Voir les visuels →">View visuals →</span>
         </div>
       </article>
       <article class="proj-card reveal" onclick="openProject('hastko')">
         <img src="assets/hastko/5.png" alt="HASTKO" loading="lazy" style="object-position:50% 14%">
         <div class="proj-ov">
-          <span class="proj-count">5 visuals</span>
+          <span class="proj-count" data-fr="5 visuels">5 visuals</span>
           <div class="proj-name">HASTKO</div>
-          <div class="proj-cat">Fashion · Art direction</div>
-          <span class="proj-link">View visuals →</span>
+          <div class="proj-cat" data-fr="Mode · Direction artistique">Fashion · Art direction</div>
+          <span class="proj-link" data-fr="Voir les visuels →">View visuals →</span>
         </div>
       </article>
     </div>
 
     <div class="reveal vid-head">
-      <div class="eyebrow">In motion</div>
-      <h3>My <em>videos.</em></h3>
+      <div class="eyebrow" data-fr="En mouvement">In motion</div>
+      <h3 data-fr="Mes <em>vidéos.</em>">My <em>videos.</em></h3>
     </div>
     <div class="vid-grid">
       <div class="reveal">
         <div class="vid-card"><iframe src="https://player.vimeo.com/video/1195551994?title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-        <div class="vid-meta"><div class="brand">HACT Paris</div><div class="type">Brand film · Full creation</div></div>
+        <div class="vid-meta"><div class="brand">HACT Paris</div><div class="type" data-fr="Film de marque · Création complète">Brand film · Full creation</div></div>
       </div>
       <div class="reveal">
         <div class="vid-card"><iframe src="https://player.vimeo.com/video/1194668994?title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-        <div class="vid-meta"><div class="brand">Unbottled</div><div class="type">Solid shampoo · Product video</div></div>
+        <div class="vid-meta"><div class="brand">Unbottled</div><div class="type" data-fr="Shampoing solide · Vidéo produit">Solid shampoo · Product video</div></div>
       </div>
       <div class="reveal">
         <div class="vid-card"><iframe src="https://player.vimeo.com/video/1197430731?title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-        <div class="vid-meta"><div class="brand">Camille</div><div class="type">AI avatar · UGC</div></div>
+        <div class="vid-meta"><div class="brand">Camille</div><div class="type" data-fr="Avatar IA · UGC">AI avatar · UGC</div></div>
       </div>
       <div class="reveal">
         <div class="vid-card"><iframe src="https://player.vimeo.com/video/1193011591?title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-        <div class="vid-meta"><div class="brand">Enyo Fightwear</div><div class="type">Advertising video · AI UGC</div></div>
+        <div class="vid-meta"><div class="brand">Enyo Fightwear</div><div class="type" data-fr="Vidéo publicitaire · UGC IA">Advertising video · AI UGC</div></div>
       </div>
       <div class="reveal">
         <div class="vid-card"><iframe src="https://player.vimeo.com/video/1193011537?title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-        <div class="vid-meta"><div class="brand">Mérinide Signature</div><div class="type">Fashion campaign · Art direction</div></div>
+        <div class="vid-meta"><div class="brand">Mérinide Signature</div><div class="type" data-fr="Campagne mode · Direction artistique">Fashion campaign · Art direction</div></div>
       </div>
       <div class="reveal">
         <div class="vid-card"><iframe src="https://player.vimeo.com/video/1193011480?title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-        <div class="vid-meta"><div class="brand">HASTKO</div><div class="type">Product video · Vertical format</div></div>
+        <div class="vid-meta"><div class="brand">HASTKO</div><div class="type" data-fr="Vidéo produit · Format vertical">Product video · Vertical format</div></div>
       </div>
     </div>
   </div>
@@ -414,7 +420,7 @@
   </div>
   <div class="pmodal-scroll"><div class="pmodal-grid" id="pmodalGrid"></div>
     <div class="pmodal-cta">
-      <a href="https://calendly.com/zhirichakib/30min" target="_blank" rel="noopener" class="btn">Need something similar? Book a call →</a>
+      <a href="https://calendly.com/zhirichakib/30min" target="_blank" rel="noopener" class="btn" data-fr="Envie d'un rendu similaire ? Réservez un appel →">Need something similar? Book a call →</a>
     </div>
   </div>
 </div>
@@ -427,14 +433,14 @@
   <div class="wrap">
     <div class="about-grid">
       <div class="reveal">
-        <div class="eyebrow">About</div>
-        <h2 class="sec-title">Chakib, AI content <em>creator.</em></h2>
-        <p style="margin-bottom:14px">A former financial auditor at Deloitte and an Audencia graduate, I've put the rigor of data at the service of creativity. Today, I help e-commerce brands produce premium advertising content with AI — faster, cheaper, with no compromise on quality.</p>
-        <p>I speak 4 languages and work with the best tools on the market to turn your brief into content that converts.</p>
+        <div class="eyebrow" data-fr="À propos">About</div>
+        <h2 class="sec-title" data-fr="Chakib, <em>créateur</em> de contenu IA.">Chakib, AI content <em>creator.</em></h2>
+        <p style="margin-bottom:14px" data-fr="Ancien auditeur financier chez Deloitte et diplômé d'Audencia, j'ai mis la rigueur de la data au service de la créativité. Aujourd'hui, j'aide les marques e-commerce à produire du contenu publicitaire premium avec l'IA — plus vite, moins cher, sans compromis sur la qualité.">A former financial auditor at Deloitte and an Audencia graduate, I've put the rigor of data at the service of creativity. Today, I help e-commerce brands produce premium advertising content with AI — faster, cheaper, with no compromise on quality.</p>
+        <p data-fr="Je parle 4 langues et travaille avec les meilleurs outils du marché pour transformer votre brief en contenu qui convertit.">I speak 4 languages and work with the best tools on the market to turn your brief into content that converts.</p>
         <div class="about-stats">
-          <div><div class="n">5+</div><div class="l">Brands served</div></div>
-          <div><div class="n">20+</div><div class="l">Creatives / month</div></div>
-          <div><div class="n">7d</div><div class="l">Delivery time</div></div>
+          <div><div class="n">5+</div><div class="l" data-fr="Marques accompagnées">Brands served</div></div>
+          <div><div class="n">20+</div><div class="l" data-fr="Créatives / mois">Creatives / month</div></div>
+          <div><div class="n" data-fr="7j">7d</div><div class="l" data-fr="Délai de livraison">Delivery time</div></div>
         </div>
         <div class="tools">
           <span>Higgsfield</span><span>Kling</span><span>Heygen</span><span>Weavy</span><span>CapCut</span><span>Canva</span>
@@ -452,15 +458,15 @@
   <div class="wrap">
     <div class="reveal" style="text-align:center">
       <div class="eyebrow">FAQ</div>
-      <h2 class="sec-title" style="margin:0 auto">Everything you need to <em>know.</em></h2>
+      <h2 class="sec-title" style="margin:0 auto" data-fr="Tout ce que vous devez <em>savoir.</em>">Everything you need to <em>know.</em></h2>
     </div>
     <div class="faq">
-      <div class="faq-item"><button class="faq-q">How does AI create my content?<span class="ic">+</span></button><div class="faq-a"><p>I combine human art direction with cutting-edge generative AI tools to produce photorealistic videos, photos and models, perfectly tuned to your brand.</p></div></div>
-      <div class="faq-item"><button class="faq-q">Are the visuals really realistic?<span class="ic">+</span></button><div class="faq-a"><p>Yes. The result is professional shoot quality. Take a look at the "My latest creations" section — these are deliverables produced for real brands.</p></div></div>
-      <div class="faq-item"><button class="faq-q">What are the delivery times?<span class="ic">+</span></button><div class="faq-a"><p>Expect around 7 days between the approved brief and the final delivery, revisions included.</p></div></div>
-      <div class="faq-item"><button class="faq-q">Do I need to provide my product photos?<span class="ic">+</span></button><div class="faq-a"><p>A few references of your product and your brand universe are enough. I handle the entire production from there.</p></div></div>
-      <div class="faq-item"><button class="faq-q">How is this different from a traditional shoot?<span class="ic">+</span></button><div class="faq-a"><p>No studio, no logistics, no months of waiting. You get the same premium quality, in a fraction of the time, with unlimited iterations.</p></div></div>
-      <div class="faq-item"><button class="faq-q">How do I start a project?<span class="ic">+</span></button><div class="faq-a"><p>Book a free discovery call through my calendar. We'll talk about your needs and I'll suggest the best approach.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span data-fr="Comment l'IA crée-t-elle mon contenu ?">How does AI create my content?</span><span class="ic">+</span></button><div class="faq-a"><p data-fr="Je combine une direction artistique humaine avec les outils d'IA générative les plus avancés pour produire des vidéos, photos et mannequins photoréalistes, parfaitement calés sur votre marque.">I combine human art direction with cutting-edge generative AI tools to produce photorealistic videos, photos and models, perfectly tuned to your brand.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span data-fr="Les visuels sont-ils vraiment réalistes ?">Are the visuals really realistic?</span><span class="ic">+</span></button><div class="faq-a"><p data-fr="Oui. Le rendu est d'une qualité de shooting professionnel. Jetez un œil à la section « Mes dernières créations » — ce sont des livrables réalisés pour de vraies marques.">Yes. The result is professional shoot quality. Take a look at the "My latest creations" section — these are deliverables produced for real brands.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span data-fr="Quels sont les délais de livraison ?">What are the delivery times?</span><span class="ic">+</span></button><div class="faq-a"><p data-fr="Comptez environ 7 jours entre le brief validé et la livraison finale, révisions incluses.">Expect around 7 days between the approved brief and the final delivery, revisions included.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span data-fr="Dois-je fournir les photos de mes produits ?">Do I need to provide my product photos?</span><span class="ic">+</span></button><div class="faq-a"><p data-fr="Quelques références de votre produit et de votre univers de marque suffisent. Je gère ensuite toute la production.">A few references of your product and your brand universe are enough. I handle the entire production from there.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span data-fr="En quoi est-ce différent d'un shooting traditionnel ?">How is this different from a traditional shoot?</span><span class="ic">+</span></button><div class="faq-a"><p data-fr="Pas de studio, pas de logistique, pas de mois d'attente. Vous obtenez la même qualité premium, en une fraction du temps, avec des itérations illimitées.">No studio, no logistics, no months of waiting. You get the same premium quality, in a fraction of the time, with unlimited iterations.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span data-fr="Comment démarrer un projet ?">How do I start a project?</span><span class="ic">+</span></button><div class="faq-a"><p data-fr="Réservez un appel découverte gratuit via mon agenda. On parle de vos besoins et je vous propose la meilleure approche.">Book a free discovery call through my calendar. We'll talk about your needs and I'll suggest the best approach.</p></div></div>
     </div>
   </div>
 </section>
@@ -468,9 +474,9 @@
 <!-- CTA FINAL -->
 <section class="sec-2">
   <div class="cta-final">
-    <h2>Ready to create content that <em>converts</em>?</h2>
-    <p>Book a free discovery call. We'll talk about your brand, your goals, and how I can help you scale.</p>
-    <a href="https://calendly.com/zhirichakib/30min" target="_blank" rel="noopener" class="btn">Book my call →</a>
+    <h2 data-fr="Prêt à créer du contenu qui <em>convertit</em> ?">Ready to create content that <em>converts</em>?</h2>
+    <p data-fr="Réservez un appel découverte gratuit. On parle de votre marque, de vos objectifs et de la façon dont je peux vous aider à passer à l'échelle.">Book a free discovery call. We'll talk about your brand, your goals, and how I can help you scale.</p>
+    <a href="https://calendly.com/zhirichakib/30min" target="_blank" rel="noopener" class="btn" data-fr="Réserver mon appel →">Book my call →</a>
   </div>
 </section>
 
@@ -478,17 +484,17 @@
 <footer>
   <div class="wrap">
     <div class="foot-top">
-      <div class="foot-brand">Chakib Zhiri<span>.</span><br>Premium AI videos & content</div>
+      <div class="foot-brand" data-fr="Chakib Zhiri<span>.</span><br>Vidéos & contenus IA premium">Chakib Zhiri<span>.</span><br>Premium AI videos & content</div>
       <div class="foot-contact">
         <a href="mailto:chakib.zhiri@audencia.com">chakib.zhiri@audencia.com</a>
         <a href="tel:+33666945860">+33 6 66 94 58 60</a>
-        <a href="https://calendly.com/zhirichakib/30min" target="_blank" rel="noopener">Book a call ↗</a>
+        <a href="https://calendly.com/zhirichakib/30min" target="_blank" rel="noopener" data-fr="Réserver un appel ↗">Book a call ↗</a>
         <a style="cursor:default">Paris, France</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <div>© 2026 Chakib Zhiri. All rights reserved.</div>
-      <div>AI Video Creator · Creative Strategist</div>
+      <div data-fr="© 2026 Chakib Zhiri. Tous droits réservés.">© 2026 Chakib Zhiri. All rights reserved.</div>
+      <div data-fr="Créateur Vidéo IA · Stratège Créatif">AI Video Creator · Creative Strategist</div>
     </div>
   </div>
 </footer>
@@ -503,17 +509,35 @@
     document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null});
     if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
   }));
+  // ---- i18n (FR / EN toggle) ----
+  const i18nEls=document.querySelectorAll('[data-fr]');
+  i18nEls.forEach(el=>el.dataset.en=el.innerHTML);
+  const langBtn=document.getElementById('langBtn');
+  let lang='en';
+  function setLang(l){
+    lang=l;
+    i18nEls.forEach(el=>el.innerHTML=(l==='fr'?el.dataset.fr:el.dataset.en));
+    document.documentElement.lang=l;
+    langBtn.textContent=(l==='fr'?'EN':'FR');
+    try{localStorage.setItem('lang',l)}catch(e){}
+    // refresh open modal category if needed
+    const op=pmodal.classList.contains('on')&&pmodal.dataset.cur;
+    if(op&&PROJECTS[op]){document.getElementById('pmodalCat').textContent=PROJECTS[op].cat[l]}
+  }
+  function toggleLang(){setLang(lang==='fr'?'en':'fr')}
+
   const PROJECTS={
-    merinide:{title:'Mérinide Signature',cat:'Fashion · Art direction',imgs:['assets/merinide/1.png','assets/merinide/2.png','assets/merinide/3.png']},
-    monday:{title:'Monday Swimwear',cat:'Swimwear · AI model campaign',imgs:['assets/monday/1.png','assets/monday/2.png','assets/monday/3.png','assets/monday/4.png','assets/monday/5.png','assets/monday/6.png','assets/monday/7.png']},
-    enyo:{title:'Enyo Fightwear',cat:'Sport · Advertising content',imgs:['assets/enyo/1.png','assets/enyo/2.png','assets/enyo/3.png','assets/enyo/4.png','assets/enyo/5.png']},
-    hastko:{title:'HASTKO',cat:'Fashion · Art direction',imgs:['assets/hastko/5.png','assets/hastko/1.jpg','assets/hastko/2.png','assets/hastko/3.png','assets/hastko/4.png']}
+    merinide:{title:'Mérinide Signature',cat:{en:'Fashion · Art direction',fr:'Mode · Direction artistique'},imgs:['assets/merinide/1.png','assets/merinide/2.png','assets/merinide/3.png']},
+    monday:{title:'Monday Swimwear',cat:{en:'Swimwear · AI model campaign',fr:'Swimwear · Campagne mannequin IA'},imgs:['assets/monday/1.png','assets/monday/2.png','assets/monday/3.png','assets/monday/4.png','assets/monday/5.png','assets/monday/6.png','assets/monday/7.png']},
+    enyo:{title:'Enyo Fightwear',cat:{en:'Sport · Advertising content',fr:'Sport · Contenu publicitaire'},imgs:['assets/enyo/1.png','assets/enyo/2.png','assets/enyo/3.png','assets/enyo/4.png','assets/enyo/5.png']},
+    hastko:{title:'HASTKO',cat:{en:'Fashion · Art direction',fr:'Mode · Direction artistique'},imgs:['assets/hastko/5.png','assets/hastko/1.jpg','assets/hastko/2.png','assets/hastko/3.png','assets/hastko/4.png']}
   };
   const pmodal=document.getElementById('pmodal'),pgrid=document.getElementById('pmodalGrid');
   function openProject(id){
     const p=PROJECTS[id];if(!p)return;
+    pmodal.dataset.cur=id;
     document.getElementById('pmodalTitle').textContent=p.title;
-    document.getElementById('pmodalCat').textContent=p.cat;
+    document.getElementById('pmodalCat').textContent=p.cat[lang];
     pgrid.innerHTML=p.imgs.map(src=>`<img src="${src}" alt="${p.title}" loading="lazy" onclick="zoom('${src}')">`).join('');
     pmodal.classList.add('on');pmodal.setAttribute('aria-hidden','false');
     document.querySelector('.pmodal-scroll').scrollTop=0;
@@ -523,6 +547,10 @@
   const lbox=document.getElementById('lbox'),lboxImg=document.getElementById('lboxImg');
   function zoom(src){lboxImg.src=src;lbox.classList.add('on')}
   document.addEventListener('keydown',e=>{if(e.key==='Escape'){lbox.classList.remove('on');closeProject()}});
+  // init language (saved pref, else browser, else EN)
+  let initLang='en';
+  try{const s=localStorage.getItem('lang');if(s){initLang=s}else if((navigator.language||'').toLowerCase().startsWith('fr')){initLang='fr'}}catch(e){}
+  if(initLang==='fr'){setLang('fr')}
 </script>
 </body>
 </html>
