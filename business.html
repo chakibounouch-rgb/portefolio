@@ -95,20 +95,32 @@
   .sec-intro{color:var(--muted);max-width:54ch;font-size:1.05rem}
 
   /* ---------- WHY ---------- */
-  .adv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:56px}
-  .adv-card{
-    background:#fff;border:1px solid var(--line);border-radius:22px;padding:40px;
-    display:flex;flex-direction:column;gap:14px;transition:transform .4s,box-shadow .4s;
-  }
-  .adv-card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -28px rgba(28,20,16,.35)}
-  .adv-card .stat{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--terra);line-height:1}
-  .adv-card h3{font-size:1.4rem}
-  .adv-card p{color:var(--muted)}
-  .compare{display:flex;gap:14px;margin-top:6px}
-  .compare div{flex:1;background:var(--cream);border-radius:14px;padding:14px 16px;text-align:center}
-  .compare div.hi{background:var(--ink);color:var(--cream)}
-  .compare .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:1px;opacity:.65}
-  .compare .val{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:600;margin-top:4px}
+  .why-head{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:end}
+  .why-head .sec-intro{padding-bottom:6px}
+  .adv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin-top:60px;background:var(--line);border:1px solid var(--line);border-radius:26px;overflow:hidden}
+  .adv-card{background:var(--cream);padding:46px 44px;display:flex;flex-direction:column;transition:background .45s}
+  .adv-card:hover{background:#fff}
+  .adv-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
+  .adv-idx{font-size:.74rem;font-weight:600;letter-spacing:2px;color:var(--muted);opacity:.7}
+  .adv-ic{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--terra);transition:.4s}
+  .adv-card:hover .adv-ic{background:var(--terra);border-color:var(--terra);color:#fff}
+  .adv-ic svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.6}
+  .adv-card .stat{font-family:'Playfair Display',serif;font-size:3.3rem;font-weight:700;color:var(--ink);line-height:1}
+  .adv-card .stat sup{font-size:1.4rem;color:var(--terra);font-weight:600;vertical-align:super}
+  .adv-card h3{font-size:1.35rem;margin-top:12px}
+  .adv-card p{color:var(--muted);margin-top:10px;font-size:.96rem}
+  .adv-foot{margin-top:auto;padding-top:26px;display:flex;align-items:center;gap:9px;font-size:.84rem;font-weight:500;color:var(--ink)}
+  .adv-foot::before{content:"";width:18px;height:1px;background:var(--terra);flex-shrink:0}
+  /* mini bars */
+  .bars{margin-top:24px;display:flex;flex-direction:column;gap:14px}
+  .bar{display:grid;grid-template-columns:88px 1fr auto;align-items:center;gap:14px}
+  .bar .bl{font-size:.74rem;text-transform:uppercase;letter-spacing:.8px;color:var(--muted)}
+  .bar .track{height:8px;border-radius:100px;background:rgba(28,20,16,.08);overflow:hidden}
+  .bar .track i{display:block;height:100%;border-radius:100px;background:rgba(28,20,16,.25)}
+  .bar.hi .track i{background:var(--terra)}
+  .bar.hi .bl{color:var(--ink);font-weight:600}
+  .bar .bv{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;color:var(--ink)}
+  .bar.hi .bv{color:var(--terra)}
 
   /* ---------- PROCESS ---------- */
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:56px}
@@ -199,6 +211,8 @@
     .nav-links{display:none}
     .burger{display:flex}
     .adv-grid,.vid-grid,.steps,.proj-grid{grid-template-columns:1fr}
+    .why-head{grid-template-columns:1fr;gap:18px;align-items:start}
+    .adv-card{padding:38px 30px}
     .pmodal-grid{column-count:1}
     .pmodal-bar{padding:18px 20px}
     .pmodal-scroll{padding:20px}
@@ -252,35 +266,56 @@
 <!-- WHY WORK WITH ME -->
 <section class="sec" id="why">
   <div class="wrap">
-    <div class="reveal">
-      <div class="sec-eyebrow">Why me</div>
-      <h2 class="sec-title">Why <em>work with me.</em></h2>
-      <p class="sec-intro">All the quality of a premium production — without the budget, the lead times and the logistics of a traditional shoot.</p>
+    <div class="why-head reveal">
+      <div>
+        <div class="sec-eyebrow">Why me</div>
+        <h2 class="sec-title">Why <em>work with me.</em></h2>
+      </div>
+      <p class="sec-intro">All the quality of a premium production — without the budget, the lead times and the logistics of a traditional shoot. Just content that's ready to convert.</p>
     </div>
     <div class="adv-grid">
       <div class="adv-card reveal">
-        <div class="stat">7 d</div>
+        <div class="adv-top">
+          <span class="adv-idx">01</span>
+          <span class="adv-ic"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
+        </div>
+        <div class="stat">7<sup>days</sup></div>
         <h3>Express delivery</h3>
-        <p>From brief to final delivery in one week. Your content ready to publish, without waiting for months.</p>
+        <p>From brief to final files in a single week. Your content ready to publish — no waiting for months.</p>
+        <div class="adv-foot">Brief approved Monday, delivered the next</div>
       </div>
       <div class="adv-card reveal">
-        <div class="stat">−75%</div>
+        <div class="adv-top">
+          <span class="adv-idx">02</span>
+          <span class="adv-ic"><svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h10"/></svg></span>
+        </div>
+        <div class="stat">−75<sup>%</sup></div>
         <h3>Faster turnaround</h3>
-        <p>Where a traditional shoot takes weeks of preparation, I deliver in a matter of days.</p>
-        <div class="compare">
-          <div><div class="lbl">Traditional shoot</div><div class="val">28 d</div></div>
-          <div class="hi"><div class="lbl">With me</div><div class="val">7 d</div></div>
+        <p>Where a traditional shoot needs weeks of prep, casting and post, I deliver in days.</p>
+        <div class="bars">
+          <div class="bar"><span class="bl">Traditional</span><div class="track"><i style="width:100%"></i></div><span class="bv">28d</span></div>
+          <div class="bar hi"><span class="bl">With me</span><div class="track"><i style="width:25%"></i></div><span class="bv">7d</span></div>
         </div>
       </div>
       <div class="adv-card reveal">
-        <div class="stat">100%</div>
+        <div class="adv-top">
+          <span class="adv-idx">03</span>
+          <span class="adv-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        </div>
+        <div class="stat">100<sup>%</sup></div>
         <h3>Your brand identity</h3>
-        <p>Every visual is tuned to your brand universe: colors, mood, lighting, tone. Consistency guaranteed.</p>
+        <p>Every visual is tuned to your world: colors, mood, lighting, tone. Cohesion across every asset, guaranteed.</p>
+        <div class="adv-foot">Colors · Mood · Lighting · Tone</div>
       </div>
       <div class="adv-card reveal">
-        <div class="stat">∞</div>
+        <div class="adv-top">
+          <span class="adv-idx">04</span>
+          <span class="adv-ic"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M21 4v4h-4M3 20v-4h4"/></svg></span>
+        </div>
+        <div class="stat">&infin;</div>
         <h3>Unlimited iterations</h3>
-        <p>We refine until the result is perfect. No studio constraints, no expensive reshoots.</p>
+        <p>We refine until the result is exactly right. No studio constraints, no expensive reshoots, ever.</p>
+        <div class="adv-foot">Revisions until you're 100% happy</div>
       </div>
     </div>
   </div>
