@@ -131,6 +131,12 @@
   .bar.hi .bv{color:var(--gold)}
 
   /* ---------- PROCESS ---------- */
+  .process-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:stretch}
+  .process-main{display:flex;flex-direction:column}
+  .process-grid .steps{grid-template-columns:1fr 1fr;gap:36px 32px;margin-top:auto;padding-top:48px}
+  .process-media{position:relative;border-radius:22px;overflow:hidden;background:var(--panel);border:1px solid var(--line);min-height:560px}
+  .process-media img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+  .process-media::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(12,11,10,.6) 0%,transparent 26%),linear-gradient(180deg,transparent 72%,var(--bg) 100%)}
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:60px}
   .step{position:relative}
   .step .num{font-size:.92rem;font-weight:600;color:var(--gold);border:1px solid rgba(201,165,114,.4);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:22px}
@@ -185,7 +191,7 @@
   .about-stats .n{font-size:2.6rem;font-weight:700;color:var(--gold);line-height:1;letter-spacing:-.03em}
   .about-stats .l{font-size:.86rem;color:var(--muted);margin-top:6px}
   .about-media{border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:var(--panel);border:1px solid var(--line)}
-  .about-media img{width:100%;height:100%;object-fit:cover}
+  .about-media img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
   .tools{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
   .tools span{background:var(--panel);border:1px solid var(--line);border-radius:100px;padding:8px 16px;font-size:.84rem;font-weight:500;color:rgba(244,240,233,.85)}
 
@@ -223,6 +229,9 @@
     .hero-inner{justify-self:stretch;max-width:none;padding:40px 28px 64px}
     .scroll-cue{display:none}
     .adv-grid,.vid-grid,.steps,.proj-grid{grid-template-columns:1fr}
+    .process-grid{grid-template-columns:1fr;gap:36px}
+    .process-grid .steps{grid-template-columns:1fr 1fr;margin-top:40px;padding-top:0}
+    .process-media{order:-1;min-height:0;aspect-ratio:4/5}
     .why-head{grid-template-columns:1fr;gap:18px;align-items:start}
     .adv-card{padding:38px 30px}
     .pmodal-grid{grid-template-columns:1fr}
@@ -324,16 +333,23 @@
 <!-- HOW I WORK -->
 <section class="sec sec-2" id="process">
   <div class="wrap">
-    <div class="reveal">
-      <div class="eyebrow" data-fr="Comment je travaille">How I work</div>
-      <h2 class="sec-title" data-fr="Un brief. Sept jours. <em>Contenu livré.</em>">One brief. Seven days. <em>Content delivered.</em></h2>
-      <p class="sec-intro" data-fr="Un processus simple et transparent — de la première conversation à la livraison de vos fichiers.">A simple, transparent process — from the first conversation to the delivery of your files.</p>
-    </div>
-    <div class="steps">
-      <div class="step reveal"><div class="num">01</div><h3 data-fr="Appel découverte">Discovery call</h3><p data-fr="On cadre vos objectifs et votre univers de marque.">We align on your goals and brand world.</p></div>
-      <div class="step reveal"><div class="num">02</div><h3 data-fr="Direction artistique">Art direction</h3><p data-fr="Concept, références et storyboard sur-mesure.">Concept, references and storyboard, tailored.</p></div>
-      <div class="step reveal"><div class="num">03</div><h3 data-fr="Production IA">AI production</h3><p data-fr="Je produis vos visuels premium, révisions incluses.">I produce your premium visuals, revisions included.</p></div>
-      <div class="step reveal"><div class="num">04</div><h3 data-fr="Livraison">Delivery</h3><p data-fr="Vos fichiers HD prêts à publier, en 7 jours.">Your HD files ready to publish, in 7 days.</p></div>
+    <div class="process-grid">
+      <div class="process-main">
+        <div class="reveal">
+          <div class="eyebrow" data-fr="Comment je travaille">How I work</div>
+          <h2 class="sec-title" data-fr="Un brief. Sept jours. <em>Contenu livré.</em>">One brief. Seven days. <em>Content delivered.</em></h2>
+          <p class="sec-intro" data-fr="Un processus simple et transparent — de la première conversation à la livraison de vos fichiers.">A simple, transparent process — from the first conversation to the delivery of your files.</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><div class="num">01</div><h3 data-fr="Appel découverte">Discovery call</h3><p data-fr="On cadre vos objectifs et votre univers de marque.">We align on your goals and brand world.</p></div>
+          <div class="step reveal"><div class="num">02</div><h3 data-fr="Direction artistique">Art direction</h3><p data-fr="Concept, références et storyboard sur-mesure.">Concept, references and storyboard, tailored.</p></div>
+          <div class="step reveal"><div class="num">03</div><h3 data-fr="Production IA">AI production</h3><p data-fr="Je produis vos visuels premium, révisions incluses.">I produce your premium visuals, revisions included.</p></div>
+          <div class="step reveal"><div class="num">04</div><h3 data-fr="Livraison">Delivery</h3><p data-fr="Vos fichiers HD prêts à publier, en 7 jours.">Your HD files ready to publish, in 7 days.</p></div>
+        </div>
+      </div>
+      <div class="process-media reveal">
+        <img src="assets/process.png" alt="AI shoot by Chakib Zhiri" loading="lazy">
+      </div>
     </div>
   </div>
 </section>
