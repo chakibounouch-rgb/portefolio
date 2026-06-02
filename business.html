@@ -106,18 +106,16 @@
   /* ---------- WHY ---------- */
   .why-head{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:end}
   .why-head .sec-intro{padding-bottom:6px}
-  .adv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin-top:60px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.12);border-radius:24px;overflow:hidden;box-shadow:0 30px 80px -40px rgba(0,0,0,.8)}
-  .adv-card{background:rgba(16,13,11,.62);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);padding:46px 44px;display:flex;flex-direction:column;transition:background .45s}
-  .adv-card:hover{background:rgba(28,22,18,.7)}
-  .adv-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
-  .adv-idx{font-size:.74rem;font-weight:600;letter-spacing:2px;color:var(--muted)}
-  .adv-ic{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:.4s}
+  .adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;border-top:1px solid rgba(255,255,255,.14)}
+  .adv-card{padding:34px 30px 0;border-left:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column}
+  .adv-card:first-child{border-left:none;padding-left:0}
+  .adv-ic{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--gold);margin-bottom:22px;transition:.4s}
   .adv-card:hover .adv-ic{background:var(--gold);border-color:var(--gold);color:#1A140C}
-  .adv-ic svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-  .adv-card .stat{font-size:3.4rem;font-weight:700;color:var(--white);line-height:1;letter-spacing:-.03em}
-  .adv-card .stat sup{font-size:1.2rem;color:var(--gold);font-weight:600;vertical-align:super;margin-left:2px}
-  .adv-card h3{font-size:1.3rem;margin-top:14px}
-  .adv-card p{color:var(--muted);margin-top:10px;font-size:.95rem}
+  .adv-ic svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .adv-card .stat{font-size:2.7rem;font-weight:700;color:var(--white);line-height:1;letter-spacing:-.03em}
+  .adv-card .stat sup{font-size:1rem;color:var(--gold);font-weight:600;vertical-align:super;margin-left:2px}
+  .adv-card h3{font-size:1.05rem;margin-top:14px}
+  .adv-card p{color:var(--muted);margin-top:8px;font-size:.9rem;line-height:1.5}
   .adv-foot{margin-top:auto;padding-top:26px;display:flex;align-items:center;gap:9px;font-size:.83rem;font-weight:500;color:rgba(244,240,233,.85)}
   .adv-foot::before{content:"";width:18px;height:1px;background:var(--gold);flex-shrink:0}
   .bars{margin-top:24px;display:flex;flex-direction:column;gap:14px}
@@ -131,12 +129,16 @@
   .bar.hi .bv{color:var(--gold)}
 
   /* ---------- PROCESS ---------- */
-  .process-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:stretch}
-  .process-main{display:flex;flex-direction:column}
-  .process-grid .steps{grid-template-columns:1fr 1fr;gap:36px 32px;margin-top:auto;padding-top:48px}
-  .process-media{position:relative;border-radius:22px;overflow:hidden;background:var(--panel);border:1px solid var(--line);min-height:560px}
-  .process-media img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
-  .process-media::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(12,11,10,.6) 0%,transparent 26%),linear-gradient(180deg,transparent 72%,var(--bg) 100%)}
+  #process{padding:0!important}
+  .process-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch;min-height:88vh}
+  .process-main{display:flex;flex-direction:column;justify-content:center;padding:120px 64px 120px max(28px,calc((100vw - 1180px)/2 + 28px))}
+  .process-grid .steps{grid-template-columns:1fr 1fr;gap:36px 32px;margin-top:56px}
+  .process-media{position:relative;overflow:hidden;background:var(--panel)}
+  .process-media img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+  .process-media::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:
+      linear-gradient(90deg,var(--bg) 0%,rgba(12,11,10,.35) 14%,transparent 32%),
+      linear-gradient(180deg,transparent 75%,var(--bg) 100%);}
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:60px}
   .step{position:relative}
   .step .num{font-size:.92rem;font-weight:600;color:var(--gold);border:1px solid rgba(201,165,114,.4);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:22px}
@@ -228,12 +230,18 @@
     .hero-media::after{background:linear-gradient(180deg,transparent 55%,var(--bg) 100%)}
     .hero-inner{justify-self:stretch;max-width:none;padding:40px 28px 64px}
     .scroll-cue{display:none}
-    .adv-grid,.vid-grid,.steps,.proj-grid{grid-template-columns:1fr}
-    .process-grid{grid-template-columns:1fr;gap:36px}
-    .process-grid .steps{grid-template-columns:1fr 1fr;margin-top:40px;padding-top:0}
-    .process-media{order:-1;min-height:0;aspect-ratio:4/5}
+    .vid-grid,.steps,.proj-grid{grid-template-columns:1fr}
+    .adv-grid{grid-template-columns:1fr 1fr}
+    .adv-card{padding:30px 22px 0}
+    .adv-card,.adv-card:first-child{border-left:1px solid rgba(255,255,255,.12)}
+    .adv-card:nth-child(odd){border-left:none;padding-left:0}
+    .adv-card:nth-child(n+3){border-top:1px solid rgba(255,255,255,.12);padding-top:30px;margin-top:6px}
+    .process-grid{grid-template-columns:1fr;min-height:0}
+    .process-main{padding:84px 28px}
+    .process-grid .steps{grid-template-columns:1fr 1fr;margin-top:40px}
+    .process-media{order:-1;min-height:0;height:60vh}
+    .process-media::after{background:linear-gradient(180deg,transparent 60%,var(--bg) 100%)}
     .why-head{grid-template-columns:1fr;gap:18px;align-items:start}
-    .adv-card{padding:38px 30px}
     .pmodal-grid{grid-template-columns:1fr}
     .pmodal-bar{padding:18px 20px}
     .pmodal-scroll{padding:20px}
@@ -303,25 +311,25 @@
     </div>
     <div class="adv-grid">
       <div class="adv-card reveal">
-        <div class="adv-top"><span class="adv-idx">01</span><span class="adv-ic"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span></div>
+        <span class="adv-ic"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
         <div class="stat">7<sup data-fr="jours">days</sup></div>
         <h3 data-fr="Livraison express">Express delivery</h3>
         <p data-fr="Du brief aux fichiers finaux en une semaine.">From brief to final files in one week.</p>
       </div>
       <div class="adv-card reveal">
-        <div class="adv-top"><span class="adv-idx">02</span><span class="adv-ic"><svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h10"/></svg></span></div>
+        <span class="adv-ic"><svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h10"/></svg></span>
         <div class="stat">−75<sup>%</sup></div>
         <h3 data-fr="Délais réduits">Faster turnaround</h3>
         <p data-fr="Des jours, pas des semaines de production.">Days, not weeks of production.</p>
       </div>
       <div class="adv-card reveal">
-        <div class="adv-top"><span class="adv-idx">03</span><span class="adv-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span></div>
+        <span class="adv-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
         <div class="stat">100<sup>%</sup></div>
         <h3 data-fr="Votre identité de marque">Your brand identity</h3>
         <p data-fr="Chaque visuel calé sur votre univers de marque.">Every visual tuned to your brand world.</p>
       </div>
       <div class="adv-card reveal">
-        <div class="adv-top"><span class="adv-idx">04</span><span class="adv-ic"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M21 4v4h-4M3 20v-4h4"/></svg></span></div>
+        <span class="adv-ic"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M21 4v4h-4M3 20v-4h4"/></svg></span>
         <div class="stat">&infin;</div>
         <h3 data-fr="Itérations illimitées">Unlimited iterations</h3>
         <p data-fr="On affine jusqu'à votre satisfaction totale.">We refine until you're 100% happy.</p>
@@ -332,24 +340,25 @@
 
 <!-- HOW I WORK -->
 <section class="sec sec-2" id="process">
-  <div class="wrap">
-    <div class="process-grid">
-      <div class="process-main">
-        <div class="reveal">
-          <div class="eyebrow" data-fr="Comment je travaille">How I work</div>
-          <h2 class="sec-title" data-fr="Un brief. Sept jours. <em>Contenu livré.</em>">One brief. Seven days. <em>Content delivered.</em></h2>
-          <p class="sec-intro" data-fr="Un processus simple et transparent — de la première conversation à la livraison de vos fichiers.">A simple, transparent process — from the first conversation to the delivery of your files.</p>
-        </div>
-        <div class="steps">
-          <div class="step reveal"><div class="num">01</div><h3 data-fr="Appel découverte">Discovery call</h3><p data-fr="On cadre vos objectifs et votre univers de marque.">We align on your goals and brand world.</p></div>
-          <div class="step reveal"><div class="num">02</div><h3 data-fr="Direction artistique">Art direction</h3><p data-fr="Concept, références et storyboard sur-mesure.">Concept, references and storyboard, tailored.</p></div>
-          <div class="step reveal"><div class="num">03</div><h3 data-fr="Production IA">AI production</h3><p data-fr="Je produis vos visuels premium, révisions incluses.">I produce your premium visuals, revisions included.</p></div>
-          <div class="step reveal"><div class="num">04</div><h3 data-fr="Livraison">Delivery</h3><p data-fr="Vos fichiers HD prêts à publier, en 7 jours.">Your HD files ready to publish, in 7 days.</p></div>
-        </div>
+  <div class="process-grid">
+    <div class="process-main">
+      <div class="reveal">
+        <div class="eyebrow" data-fr="Comment je travaille">How I work</div>
+        <h2 class="sec-title" data-fr="Un brief. Sept jours. <em>Contenu livré.</em>">One brief. Seven days. <em>Content delivered.</em></h2>
+        <p class="sec-intro" data-fr="Un processus simple et transparent — de la première conversation à la livraison de vos fichiers.">A simple, transparent process — from the first conversation to the delivery of your files.</p>
       </div>
-      <div class="process-media reveal">
-        <img src="assets/process.png" alt="AI shoot by Chakib Zhiri" loading="lazy">
+      <div class="steps">
+        <div class="step reveal"><div class="num">01</div><h3 data-fr="Appel découverte">Discovery call</h3><p data-fr="On cadre vos objectifs et votre univers de marque.">We align on your goals and brand world.</p></div>
+        <div class="step reveal"><div class="num">02</div><h3 data-fr="Direction artistique">Art direction</h3><p data-fr="Concept, références et storyboard sur-mesure.">Concept, references and storyboard, tailored.</p></div>
+        <div class="step reveal"><div class="num">03</div><h3 data-fr="Production IA">AI production</h3><p data-fr="Je produis vos visuels premium, révisions incluses.">I produce your premium visuals, revisions included.</p></div>
+        <div class="step reveal"><div class="num">04</div><h3 data-fr="Livraison">Delivery</h3><p data-fr="Vos fichiers HD prêts à publier, en 7 jours.">Your HD files ready to publish, in 7 days.</p></div>
       </div>
+      <div class="reveal" style="margin-top:48px">
+        <a href="https://calendly.com/zhirichakib/30min" target="_blank" rel="noopener" class="btn" data-fr="Réserver un appel →">Book a call →</a>
+      </div>
+    </div>
+    <div class="process-media reveal">
+      <img src="assets/process.png" alt="AI shoot by Chakib Zhiri" loading="lazy">
     </div>
   </div>
 </section>
@@ -374,7 +383,7 @@
         </div>
       </article>
       <article class="proj-card reveal" onclick="openProject('monday')">
-        <img src="assets/monday/4.png" alt="Monday Swimwear" loading="lazy">
+        <img src="assets/monday/cover.png" alt="Monday Swimwear" loading="lazy" style="object-position:50% 22%">
         <div class="proj-ov">
           <span class="proj-count" data-fr="7 visuels">7 visuals</span>
           <div class="proj-name">Monday Swimwear</div>
@@ -465,6 +474,10 @@
           <div><div class="n">20+</div><div class="l" data-fr="Créatives / mois">Creatives / month</div></div>
           <div><div class="n" data-fr="7j">7d</div><div class="l" data-fr="Délai de livraison">Delivery time</div></div>
         </div>
+        <div class="reveal" style="margin-top:36px;display:flex;gap:14px;flex-wrap:wrap">
+          <a class="btn" href="https://www.linkedin.com/in/chakib-zhiri-1485a21b4" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn btn-ghost" href="mailto:chakib.zhiri@audencia.com">chakib.zhiri@audencia.com</a>
+        </div>
       </div>
       <div class="about-media reveal">
         <img src="assets/about.png" alt="AI creation by Chakib Zhiri" loading="lazy">
@@ -549,7 +562,7 @@
   const PROJECTS={
     merinide:{title:'Mérinide Signature',cat:{en:'Fashion · Art direction',fr:'Mode · Direction artistique'},imgs:['assets/merinide/1.png','assets/merinide/2.png','assets/merinide/3.png']},
     monday:{title:'Monday Swimwear',cat:{en:'Swimwear · AI model campaign',fr:'Swimwear · Campagne mannequin IA'},imgs:['assets/monday/1.png','assets/monday/2.png','assets/monday/3.png','assets/monday/4.png','assets/monday/5.png','assets/monday/6.png','assets/monday/7.png']},
-    enyo:{title:'Enyo Fightwear',cat:{en:'Sport · Advertising content',fr:'Sport · Contenu publicitaire'},imgs:['assets/enyo/1.png','assets/enyo/2.png','assets/enyo/3.png','assets/enyo/4.png','assets/enyo/5.png']},
+    enyo:{title:'Enyo Fightwear',cat:{en:'Sport · Advertising content',fr:'Sport · Contenu publicitaire'},imgs:['assets/enyo/1.png','assets/enyo/2.png','assets/enyo/8.png','assets/enyo/9.png','assets/enyo/10.png','assets/enyo/11.png']},
     hastko:{title:'HASTKO',cat:{en:'Fashion · Art direction',fr:'Mode · Direction artistique'},imgs:['assets/hastko/5.png','assets/hastko/1.jpg','assets/hastko/2.png','assets/hastko/3.png','assets/hastko/4.png']}
   };
   const pmodal=document.getElementById('pmodal'),pgrid=document.getElementById('pmodalGrid');
