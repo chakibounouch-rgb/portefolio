@@ -87,9 +87,14 @@
 
   /* trust strip */
   .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
-  .trust .wrap{display:flex;flex-wrap:wrap;gap:14px 46px;align-items:center;justify-content:center;padding:28px}
-  .trust span{font-size:.95rem;font-weight:500;letter-spacing:.5px;color:rgba(244,240,233,.5)}
-  .trust .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);opacity:.8}
+  .trust .wrap{display:flex;flex-wrap:wrap;gap:18px 54px;align-items:center;justify-content:center;padding:30px 28px}
+  .tlogo{width:auto;opacity:.6;transition:opacity .3s,filter .3s;filter:saturate(0)}
+  .tlogo:hover{opacity:1}
+  .tl-enyo{height:34px}
+  .tl-merinide{height:30px}
+  .tl-hastko{height:27px}
+  .tl-hact{height:31px}
+  .tword{font-size:.95rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(244,240,233,.55)}
 
   /* ---------- SECTION ---------- */
   .sec{padding:120px 0}
@@ -228,9 +233,12 @@
     .nav-cta{padding:9px 16px;font-size:.8rem;white-space:nowrap}
     .lang-btn{padding:7px 11px;font-size:.72rem}
     .burger{display:flex}
-    .trust .wrap{gap:10px 22px;padding:22px 24px}
-    .trust .dot{display:none}
-    .trust span{font-size:.82rem;letter-spacing:.3px;white-space:nowrap}
+    .trust .wrap{gap:18px 30px;padding:24px 22px}
+    .tl-enyo{height:26px}
+    .tl-merinide{height:23px}
+    .tl-hastko{height:21px}
+    .tl-hact{height:24px}
+    .tword{font-size:.8rem;letter-spacing:1.5px;white-space:nowrap}
     .hero{grid-template-columns:1fr;min-height:auto}
     .hero-media{order:-1;height:60vh}
     .hero-media img{object-position:50% 16%}
@@ -297,12 +305,12 @@
 
 <!-- TRUST -->
 <div class="trust">
-  <div class="wrap">
-    <span>Enyo Fightwear</span><i class="dot"></i>
-    <span>Monday Swimwear</span><i class="dot"></i>
-    <span>Mérinide Signature</span><i class="dot"></i>
-    <span>HASTKO</span><i class="dot"></i>
-    <span>HACT Paris</span>
+  <div class="wrap trust-logos">
+    <img class="tlogo tl-enyo" src="assets/logos/enyo-w.png" alt="Enyo Fightwear">
+    <span class="tword">Monday Swimwear</span>
+    <img class="tlogo tl-merinide" src="assets/logos/merinide-w.png" alt="Mérinide Signature">
+    <img class="tlogo tl-hastko" src="assets/logos/hastko-w.png" alt="HASTKO">
+    <img class="tlogo tl-hact" src="assets/logos/hact-w.png" alt="HACT Paris">
   </div>
 </div>
 
