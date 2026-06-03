@@ -87,12 +87,12 @@
 
   /* trust strip */
   .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2);padding:30px 0}
-  .marquee{overflow:hidden;width:100%;
+  .marquee{overflow:hidden;display:flex;
     -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 91%,transparent 100%);
     mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 91%,transparent 100%)}
-  .marquee-track{display:flex;align-items:center;width:max-content;animation:marquee 32s linear infinite}
+  .marquee-track{flex:0 0 100%;min-width:100%;display:flex;align-items:center;justify-content:space-around;animation:marquee 32s linear infinite}
   .marquee:hover .marquee-track{animation-play-state:paused}
-  .mq{display:inline-flex;align-items:center;margin-right:64px}
+  .mq{display:inline-flex;align-items:center;flex-shrink:0;padding:0 8px}
   .mq-hastko{gap:12px}
   .tlogo{width:auto;opacity:.6;filter:saturate(0);transition:opacity .3s}
   .mq:hover .tlogo{opacity:1}
@@ -101,7 +101,7 @@
   .tl-hastko{height:27px}
   .tl-hact{height:31px}
   .tword{font-size:.95rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(244,240,233,.55);white-space:nowrap}
-  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-100%)}}
   @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
 
   /* ---------- SECTION ---------- */
@@ -243,7 +243,7 @@
     .burger{display:flex}
     .trust{padding:22px 0}
     .marquee-track{animation-duration:22s}
-    .mq{margin-right:42px}
+    .mq{padding:0 4px}
     .tl-enyo{height:26px}
     .tl-merinide{height:23px}
     .tl-hastko{height:21px}
@@ -322,11 +322,13 @@
       <span class="mq"><img class="tlogo tl-merinide" src="assets/logos/merinide-w.png" alt="Mérinide Signature"></span>
       <span class="mq mq-hastko"><img class="tlogo tl-hastko" src="assets/logos/hastko-w.png" alt=""><span class="tword">HASTKO</span></span>
       <span class="mq"><img class="tlogo tl-hact" src="assets/logos/hact-w.png" alt="HACT Paris"></span>
-      <span class="mq" aria-hidden="true"><img class="tlogo tl-enyo" src="assets/logos/enyo-w.png" alt=""></span>
-      <span class="mq" aria-hidden="true"><span class="tword">Monday Swimwear</span></span>
-      <span class="mq" aria-hidden="true"><img class="tlogo tl-merinide" src="assets/logos/merinide-w.png" alt=""></span>
-      <span class="mq mq-hastko" aria-hidden="true"><img class="tlogo tl-hastko" src="assets/logos/hastko-w.png" alt=""><span class="tword">HASTKO</span></span>
-      <span class="mq" aria-hidden="true"><img class="tlogo tl-hact" src="assets/logos/hact-w.png" alt=""></span>
+    </div>
+    <div class="marquee-track" aria-hidden="true">
+      <span class="mq"><img class="tlogo tl-enyo" src="assets/logos/enyo-w.png" alt=""></span>
+      <span class="mq"><span class="tword">Monday Swimwear</span></span>
+      <span class="mq"><img class="tlogo tl-merinide" src="assets/logos/merinide-w.png" alt=""></span>
+      <span class="mq mq-hastko"><img class="tlogo tl-hastko" src="assets/logos/hastko-w.png" alt=""><span class="tword">HASTKO</span></span>
+      <span class="mq"><img class="tlogo tl-hact" src="assets/logos/hact-w.png" alt=""></span>
     </div>
   </div>
 </div>
