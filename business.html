@@ -86,15 +86,22 @@
   .scroll-cue{position:absolute;bottom:30px;left:48px;z-index:3;font-size:.74rem;letter-spacing:2px;text-transform:uppercase;color:rgba(244,240,233,.55)}
 
   /* trust strip */
-  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
-  .trust .wrap{display:flex;flex-wrap:wrap;gap:18px 54px;align-items:center;justify-content:center;padding:30px 28px}
-  .tlogo{width:auto;opacity:.6;transition:opacity .3s,filter .3s;filter:saturate(0)}
-  .tlogo:hover{opacity:1}
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2);padding:30px 0}
+  .marquee{overflow:hidden;width:100%;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 91%,transparent 100%);
+    mask-image:linear-gradient(90deg,transparent 0,#000 9%,#000 91%,transparent 100%)}
+  .marquee-track{display:flex;align-items:center;width:max-content;animation:marquee 32s linear infinite}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  .mq{display:inline-flex;align-items:center;margin-right:64px}
+  .tlogo{width:auto;opacity:.6;filter:saturate(0);transition:opacity .3s}
+  .mq:hover .tlogo{opacity:1}
   .tl-enyo{height:34px}
   .tl-merinide{height:30px}
   .tl-hastko{height:27px}
   .tl-hact{height:31px}
-  .tword{font-size:.95rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(244,240,233,.55)}
+  .tword{font-size:.95rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(244,240,233,.55);white-space:nowrap}
+  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
 
   /* ---------- SECTION ---------- */
   .sec{padding:120px 0}
@@ -233,12 +240,14 @@
     .nav-cta{padding:9px 16px;font-size:.8rem;white-space:nowrap}
     .lang-btn{padding:7px 11px;font-size:.72rem}
     .burger{display:flex}
-    .trust .wrap{gap:18px 30px;padding:24px 22px}
+    .trust{padding:22px 0}
+    .marquee-track{animation-duration:22s}
+    .mq{margin-right:42px}
     .tl-enyo{height:26px}
     .tl-merinide{height:23px}
     .tl-hastko{height:21px}
     .tl-hact{height:24px}
-    .tword{font-size:.8rem;letter-spacing:1.5px;white-space:nowrap}
+    .tword{font-size:.8rem;letter-spacing:1.5px}
     .hero{grid-template-columns:1fr;min-height:auto}
     .hero-media{order:-1;height:60vh}
     .hero-media img{object-position:50% 16%}
@@ -305,12 +314,19 @@
 
 <!-- TRUST -->
 <div class="trust">
-  <div class="wrap trust-logos">
-    <img class="tlogo tl-enyo" src="assets/logos/enyo-w.png" alt="Enyo Fightwear">
-    <span class="tword">Monday Swimwear</span>
-    <img class="tlogo tl-merinide" src="assets/logos/merinide-w.png" alt="Mérinide Signature">
-    <img class="tlogo tl-hastko" src="assets/logos/hastko-w.png" alt="HASTKO">
-    <img class="tlogo tl-hact" src="assets/logos/hact-w.png" alt="HACT Paris">
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="mq"><img class="tlogo tl-enyo" src="assets/logos/enyo-w.png" alt="Enyo Fightwear"></span>
+      <span class="mq"><span class="tword">Monday Swimwear</span></span>
+      <span class="mq"><img class="tlogo tl-merinide" src="assets/logos/merinide-w.png" alt="Mérinide Signature"></span>
+      <span class="mq"><img class="tlogo tl-hastko" src="assets/logos/hastko-w.png" alt="HASTKO"></span>
+      <span class="mq"><img class="tlogo tl-hact" src="assets/logos/hact-w.png" alt="HACT Paris"></span>
+      <span class="mq" aria-hidden="true"><img class="tlogo tl-enyo" src="assets/logos/enyo-w.png" alt=""></span>
+      <span class="mq" aria-hidden="true"><span class="tword">Monday Swimwear</span></span>
+      <span class="mq" aria-hidden="true"><img class="tlogo tl-merinide" src="assets/logos/merinide-w.png" alt=""></span>
+      <span class="mq" aria-hidden="true"><img class="tlogo tl-hastko" src="assets/logos/hastko-w.png" alt=""></span>
+      <span class="mq" aria-hidden="true"><img class="tlogo tl-hact" src="assets/logos/hact-w.png" alt=""></span>
+    </div>
   </div>
 </div>
 
