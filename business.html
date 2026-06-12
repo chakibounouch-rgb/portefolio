@@ -103,6 +103,17 @@
   .tword{font-size:.95rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(244,240,233,.55);white-space:nowrap}
   @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-100%)}}
   @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+  /* comparatif IA vs classique */
+  .compare{margin-top:52px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--bg-2)}
+  .compare-row{display:grid;grid-template-columns:1.1fr 1fr 1fr;align-items:center}
+  .compare-row + .compare-row{border-top:1px solid var(--line)}
+  .compare-aspect{padding:22px 26px;font-weight:600;color:var(--white)}
+  .compare-old{padding:22px 26px;color:rgba(244,240,233,.45)}
+  .compare-new{padding:22px 26px;color:var(--white);font-weight:600;background:rgba(201,165,114,.07);box-shadow:inset 3px 0 0 var(--gold)}
+  .compare-head{background:rgba(255,255,255,.02)}
+  .compare-head>div{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding-top:18px;padding-bottom:18px}
+  .compare-head .compare-old{color:rgba(244,240,233,.55)}
+  .compare-head .compare-new{color:var(--gold)}
 
   /* ---------- SECTION ---------- */
   .sec{padding:120px 0}
@@ -249,6 +260,10 @@
     .tl-hastko{height:19px}
     .tl-hact{height:22px}
     .tword{font-size:.78rem;letter-spacing:1.5px}
+    .compare{margin-top:36px}
+    .compare-row{grid-template-columns:.85fr 1fr 1fr}
+    .compare-aspect,.compare-old,.compare-new{padding:15px 13px;font-size:.85rem}
+    .compare-head>div{font-size:.62rem;letter-spacing:.08em}
     .hero{grid-template-columns:1fr;min-height:auto}
     .hero-media{order:-1;height:60vh}
     .hero-media img{object-position:50% 16%}
@@ -283,7 +298,7 @@
 <nav id="nav">
   <div class="logo">Chakib<span>.</span></div>
   <div class="nav-links">
-    <a href="#why" data-fr="Pourquoi moi">Why me</a>
+    <a href="#why" data-fr="Pourquoi l'IA">Why AI</a>
     <a href="#process" data-fr="Comment je travaille">How I work</a>
     <a href="#projects" data-fr="Projets">Projects</a>
     <a href="#about" data-fr="À propos">About</a>
@@ -338,35 +353,41 @@
   <div class="wrap">
     <div class="why-head reveal">
       <div>
-        <div class="eyebrow" data-fr="Pourquoi moi">Why me</div>
-        <h2 class="sec-title" data-fr="Pourquoi <em>travailler avec moi.</em>">Why <em>work with me.</em></h2>
+        <div class="eyebrow" data-fr="Comparatif">Comparison</div>
+        <h2 class="sec-title" data-fr="Pourquoi <em>passer à l'IA.</em>">Why <em>switch to AI.</em></h2>
       </div>
-      <p class="sec-intro" data-fr="Toute la qualité d'une production premium — sans le budget, les délais et la logistique d'un shooting traditionnel. Juste du contenu prêt à convertir.">All the quality of a premium production — without the budget, the lead times and the logistics of a traditional shoot. Just content that's ready to convert.</p>
+      <p class="sec-intro" data-fr="Le même résultat premium qu'un shooting studio — sans les délais, le budget et la logistique. Voyez la différence.">The same premium result as a studio shoot — without the lead times, budget and logistics. See the difference.</p>
     </div>
-    <div class="adv-grid">
-      <div class="adv-card reveal">
-        <span class="adv-ic"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
-        <div class="stat">7<sup data-fr="jours">days</sup></div>
-        <h3 data-fr="Livraison express">Express delivery</h3>
-        <p data-fr="Du brief aux fichiers finaux en une semaine.">From brief to final files in one week.</p>
+    <div class="compare reveal">
+      <div class="compare-row compare-head">
+        <div class="compare-aspect"></div>
+        <div class="compare-old" data-fr="Production classique">Traditional production</div>
+        <div class="compare-new" data-fr="Production avec IA ✦">AI production ✦</div>
       </div>
-      <div class="adv-card reveal">
-        <span class="adv-ic"><svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h10"/></svg></span>
-        <div class="stat">−75<sup>%</sup></div>
-        <h3 data-fr="Délais réduits">Faster turnaround</h3>
-        <p data-fr="Des jours, pas des semaines de production.">Days, not weeks of production.</p>
+      <div class="compare-row">
+        <div class="compare-aspect" data-fr="Délais">Turnaround</div>
+        <div class="compare-old" data-fr="3 semaines">3 weeks</div>
+        <div class="compare-new" data-fr="72h">72h</div>
       </div>
-      <div class="adv-card reveal">
-        <span class="adv-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-        <div class="stat">100<sup>%</sup></div>
-        <h3 data-fr="Votre identité de marque">Your brand identity</h3>
-        <p data-fr="Chaque visuel calé sur votre univers de marque.">Every visual tuned to your brand world.</p>
+      <div class="compare-row">
+        <div class="compare-aspect" data-fr="Coût">Cost</div>
+        <div class="compare-old" data-fr="Élevé — studio, équipe, logistique">High — studio, crew, logistics</div>
+        <div class="compare-new" data-fr="Une fraction du budget">A fraction of the budget</div>
       </div>
-      <div class="adv-card reveal">
-        <span class="adv-ic"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M21 4v4h-4M3 20v-4h4"/></svg></span>
-        <div class="stat">&infin;</div>
-        <h3 data-fr="Itérations illimitées">Unlimited iterations</h3>
-        <p data-fr="On affine jusqu'à votre satisfaction totale.">We refine until you're 100% happy.</p>
+      <div class="compare-row">
+        <div class="compare-aspect" data-fr="Volume">Volume</div>
+        <div class="compare-old" data-fr="Quelques visuels">A handful of visuals</div>
+        <div class="compare-new" data-fr="Illimité">Unlimited</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-aspect" data-fr="Créativité">Creativity</div>
+        <div class="compare-old" data-fr="Contraintes physiques">Physical constraints</div>
+        <div class="compare-new" data-fr="Infinie">Infinite</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-aspect" data-fr="Révisions">Revisions</div>
+        <div class="compare-old" data-fr="Limitées et coûteuses">Limited and costly</div>
+        <div class="compare-new" data-fr="Illimitées">Unlimited</div>
       </div>
     </div>
   </div>
