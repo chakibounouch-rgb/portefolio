@@ -53,15 +53,15 @@
   .nav-links a:hover{opacity:1}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
-    background:var(--gold);color:#1A140C;
+    background:linear-gradient(135deg,#DBBE8A 0%,#C9A572 55%,#B98F55 100%);color:#1A140C;
     padding:13px 26px;border-radius:100px;
     font-size:.9rem;font-weight:600;
-    transition:transform .3s,background .3s,box-shadow .3s;
+    transition:transform .3s,box-shadow .3s,filter .3s;
     border:none;cursor:pointer;
   }
-  .btn:hover{transform:translateY(-2px);background:var(--gold-2);box-shadow:0 12px 30px -10px rgba(201,165,114,.5)}
-  .btn-ghost{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.28)}
-  .btn-ghost:hover{background:var(--white);color:#1A140C;box-shadow:none}
+  .btn:hover{transform:translateY(-2px);filter:brightness(1.06);box-shadow:0 14px 34px -10px rgba(201,165,114,.55)}
+  .btn-ghost{background:rgba(201,165,114,.08);color:var(--white);border:1px solid rgba(201,165,114,.45)}
+  .btn-ghost:hover{background:rgba(201,165,114,.18);color:var(--white);box-shadow:0 12px 30px -12px rgba(201,165,114,.4)}
   .nav-cta{padding:11px 24px}
   .nav-right{display:flex;align-items:center;gap:18px}
   .lang-btn{background:transparent;border:1px solid var(--line);color:var(--white);font-size:.78rem;font-weight:600;letter-spacing:.06em;padding:8px 14px;border-radius:999px;cursor:pointer;transition:all .25s}
