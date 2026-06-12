@@ -211,7 +211,9 @@
   .pmodal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1100px;margin:0 auto}
   .pmodal-grid img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 12%;border-radius:14px;cursor:zoom-in;display:block;transition:opacity .3s}
   .pmodal-grid img:hover{opacity:.85}
-  .pmodal-cta{text-align:center;padding:50px 0 20px}
+  .pmodal-desc{max-width:760px;margin:38px auto 0;text-align:center;color:rgba(244,240,233,.62);font-size:1.04rem;line-height:1.65}
+  .pmodal-desc:empty{display:none}
+  .pmodal-cta{text-align:center;padding:40px 0 20px}
 
   /* ---------- LIGHTBOX ---------- */
   .lbox{position:fixed;inset:0;z-index:300;background:rgba(6,6,6,.95);display:flex;align-items:center;justify-content:center;padding:40px;opacity:0;pointer-events:none;transition:opacity .35s;cursor:zoom-out}
@@ -513,6 +515,7 @@
     <button class="pmodal-x" onclick="closeProject()" aria-label="Close">&times;</button>
   </div>
   <div class="pmodal-scroll"><div class="pmodal-grid" id="pmodalGrid"></div>
+    <p class="pmodal-desc" id="pmodalDesc"></p>
     <div class="pmodal-cta">
       <a href="https://calendly.com/zhirichakib/30min" target="_blank" rel="noopener" class="btn" data-fr="Envie d'un rendu similaire ? Réservez un appel →">Need something similar? Book a call →</a>
     </div>
@@ -617,15 +620,15 @@
     try{localStorage.setItem('lang',l)}catch(e){}
     // refresh open modal category if needed
     const op=pmodal.classList.contains('on')&&pmodal.dataset.cur;
-    if(op&&PROJECTS[op]){document.getElementById('pmodalCat').textContent=PROJECTS[op].cat[l]}
+    if(op&&PROJECTS[op]){document.getElementById('pmodalCat').textContent=PROJECTS[op].cat[l];document.getElementById('pmodalDesc').textContent=(PROJECTS[op].desc&&PROJECTS[op].desc[l])||''}
   }
   function toggleLang(){setLang(lang==='fr'?'en':'fr')}
 
   const PROJECTS={
-    merinide:{title:'Mérinide Signature',cat:{en:'Fashion · Art direction',fr:'Mode · Direction artistique'},imgs:['assets/merinide/1.png','assets/merinide/2.png','assets/merinide/3.png']},
-    monday:{title:'Monday Swimwear',cat:{en:'Swimwear · AI model campaign',fr:'Swimwear · Campagne mannequin IA'},imgs:['assets/monday/1.png','assets/monday/2.png','assets/monday/3.png','assets/monday/4.png','assets/monday/5.png','assets/monday/6.png','assets/monday/7.png']},
-    enyo:{title:'Enyo Fightwear',cat:{en:'Sport · Advertising content',fr:'Sport · Contenu publicitaire'},imgs:['assets/enyo/1.png','assets/enyo/2.png','assets/enyo/8.png','assets/enyo/9.png','assets/enyo/10.png','assets/enyo/11.png']},
-    hastko:{title:'HASTKO',cat:{en:'Fashion · Art direction',fr:'Mode · Direction artistique'},imgs:['assets/hastko/5.png','assets/hastko/1.jpg','assets/hastko/2.png','assets/hastko/3.png','assets/hastko/4.png']}
+    merinide:{title:'Mérinide Signature',cat:{en:'Fashion · Art direction',fr:'Mode · Direction artistique'},desc:{fr:"Direction artistique et visuels mode pour Mérinide Signature — une identité élégante et intemporelle traduite en images haut de gamme.",en:"Art direction and fashion visuals for Mérinide Signature — an elegant, timeless identity translated into high-end imagery."},imgs:['assets/merinide/1.png','assets/merinide/2.png','assets/merinide/3.png']},
+    monday:{title:'Monday Swimwear',cat:{en:'Swimwear · AI model campaign',fr:'Swimwear · Campagne mannequin IA'},desc:{fr:"Campagne mannequin IA pour Monday Swimwear — une série de visuels swimwear lumineux et prêts à publier, sans aucune contrainte de production.",en:"AI model campaign for Monday Swimwear — a series of bright, ready-to-publish swimwear visuals, with zero production constraints."},imgs:['assets/monday/1.png','assets/monday/2.png','assets/monday/3.png','assets/monday/4.png','assets/monday/5.png','assets/monday/6.png','assets/monday/7.png']},
+    enyo:{title:'Enyo Fightwear',cat:{en:'Sport · Advertising content',fr:'Sport · Contenu publicitaire'},desc:{fr:"Contenu publicitaire pour Enyo Fightwear — une collection sportswear féminine mise en scène par IA, sans shooting studio. Mannequins, poses et lumière entièrement générés pour coller à l'univers premium de la marque.",en:"Advertising content for Enyo Fightwear — a women's sportswear collection staged with AI, without a studio shoot. Models, poses and lighting fully generated to match the brand's premium world."},imgs:['assets/enyo/1.png','assets/enyo/2.png','assets/enyo/8.png','assets/enyo/9.png','assets/enyo/10.png','assets/enyo/11.png']},
+    hastko:{title:'HASTKO',cat:{en:'Fashion · Art direction',fr:'Mode · Direction artistique'},desc:{fr:"Direction artistique pour HASTKO — une esthétique mode affirmée, déclinée en une série de visuels cohérents et impactants.",en:"Art direction for HASTKO — a bold fashion aesthetic, declined into a consistent, impactful series of visuals."},imgs:['assets/hastko/5.png','assets/hastko/1.jpg','assets/hastko/2.png','assets/hastko/3.png','assets/hastko/4.png']}
   };
   const pmodal=document.getElementById('pmodal'),pgrid=document.getElementById('pmodalGrid');
   function openProject(id){
@@ -633,6 +636,7 @@
     pmodal.dataset.cur=id;
     document.getElementById('pmodalTitle').textContent=p.title;
     document.getElementById('pmodalCat').textContent=p.cat[lang];
+    document.getElementById('pmodalDesc').textContent=(p.desc&&p.desc[lang])||'';
     pgrid.innerHTML=p.imgs.map(src=>`<img src="${src}" alt="${p.title}" loading="lazy" onclick="zoom('${src}')">`).join('');
     pmodal.classList.add('on');pmodal.setAttribute('aria-hidden','false');
     document.querySelector('.pmodal-scroll').scrollTop=0;
