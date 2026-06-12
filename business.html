@@ -114,6 +114,14 @@
   .compare-head>div{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding-top:18px;padding-bottom:18px}
   .compare-head .compare-old{color:rgba(244,240,233,.55)}
   .compare-head .compare-new{color:var(--gold)}
+  /* process flow (5 étapes) */
+  .flow{display:flex;margin-top:60px}
+  .flow-step{flex:1;text-align:center;position:relative;padding:0 12px}
+  .flow-ic{width:54px;height:54px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(201,165,114,.1);border:1px solid var(--line);color:var(--gold);position:relative;z-index:2}
+  .flow-ic svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .flow-step:not(:last-child)::after{content:"";position:absolute;top:27px;left:calc(50% + 38px);width:calc(100% - 76px);height:1px;background:var(--line);z-index:1}
+  .flow-step h3{margin:20px 0 9px;font-size:1.05rem;color:var(--white)}
+  .flow-step p{font-size:.9rem;line-height:1.55;color:rgba(244,240,233,.5);max-width:200px;margin:0 auto}
 
   /* ---------- SECTION ---------- */
   .sec{padding:120px 0}
@@ -264,6 +272,10 @@
     .compare-row{grid-template-columns:.85fr 1fr 1fr}
     .compare-aspect,.compare-old,.compare-new{padding:15px 13px;font-size:.85rem}
     .compare-head>div{font-size:.62rem;letter-spacing:.08em}
+    .flow{flex-direction:column;gap:30px;margin-top:38px}
+    .flow-step{padding:0}
+    .flow-step:not(:last-child)::after{display:none}
+    .flow-step p{max-width:none}
     .hero{grid-template-columns:1fr;min-height:auto}
     .hero-media{order:-1;height:60vh}
     .hero-media img{object-position:50% 16%}
@@ -298,7 +310,7 @@
 <nav id="nav">
   <div class="logo">Chakib<span>.</span></div>
   <div class="nav-links">
-    <a href="#why" data-fr="Pourquoi l'IA">Why AI</a>
+    <a href="#why" data-fr="Process">Process</a>
     <a href="#process" data-fr="Comment je travaille">How I work</a>
     <a href="#projects" data-fr="Projets">Projects</a>
     <a href="#about" data-fr="À propos">About</a>
@@ -353,41 +365,36 @@
   <div class="wrap">
     <div class="why-head reveal">
       <div>
-        <div class="eyebrow" data-fr="Comparatif">Comparison</div>
+        <div class="eyebrow" data-fr="Process">Process</div>
         <h2 class="sec-title" data-fr="Pensé par l'humain. <em>Accéléré par l'IA.</em>">Crafted by humans. <em>Accelerated by AI.</em></h2>
       </div>
-      <p class="sec-intro" data-fr="Le même résultat premium qu'un shooting studio — sans les délais, le budget et la logistique. Voyez la différence.">The same premium result as a studio shoot — without the lead times, budget and logistics. See the difference.</p>
+      <p class="sec-intro" data-fr="De votre marque à des fichiers prêts à diffuser — un processus clair en 5 étapes.">From your brand to ready-to-publish files — a clear five-step process.</p>
     </div>
-    <div class="compare reveal">
-      <div class="compare-row compare-head">
-        <div class="compare-aspect"></div>
-        <div class="compare-old" data-fr="Production classique">Traditional production</div>
-        <div class="compare-new" data-fr="Production avec IA ✦">AI production ✦</div>
+    <div class="flow reveal">
+      <div class="flow-step">
+        <span class="flow-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3"/></svg></span>
+        <h3 data-fr="Compréhension">Understanding</h3>
+        <p data-fr="Votre marque, vos objectifs, votre audience.">Your brand, your goals, your audience.</p>
       </div>
-      <div class="compare-row">
-        <div class="compare-aspect" data-fr="Délais">Turnaround</div>
-        <div class="compare-old" data-fr="3 semaines">3 weeks</div>
-        <div class="compare-new" data-fr="72h">72h</div>
+      <div class="flow-step">
+        <span class="flow-ic"><svg viewBox="0 0 24 24"><path d="M3 21l3-1L17 9l-2-2L4 18l-1 3z"/><path d="M14 6l4 4"/></svg></span>
+        <h3 data-fr="Direction artistique">Art direction</h3>
+        <p data-fr="Concepts créatifs et choix visuels stratégiques.">Creative concepts and strategic visual choices.</p>
       </div>
-      <div class="compare-row">
-        <div class="compare-aspect" data-fr="Coût">Cost</div>
-        <div class="compare-old" data-fr="Élevé — studio, équipe, logistique">High — studio, crew, logistics</div>
-        <div class="compare-new" data-fr="Une fraction du budget">A fraction of the budget</div>
+      <div class="flow-step">
+        <span class="flow-ic"><svg viewBox="0 0 24 24"><path d="M13 2L5 13h6l-1 9 8-12h-6l1-8z"/></svg></span>
+        <h3 data-fr="Production IA">AI production</h3>
+        <p data-fr="Visuels et vidéos générés avec précision.">Visuals and videos generated with precision.</p>
       </div>
-      <div class="compare-row">
-        <div class="compare-aspect" data-fr="Volume">Volume</div>
-        <div class="compare-old" data-fr="Quelques visuels">A handful of visuals</div>
-        <div class="compare-new" data-fr="Illimité">Unlimited</div>
+      <div class="flow-step">
+        <span class="flow-ic"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="8" cy="18" r="2"/></svg></span>
+        <h3 data-fr="Ajustements">Adjustments</h3>
+        <p data-fr="Affinage et déclinaisons selon vos retours.">Refinements and variations based on your feedback.</p>
       </div>
-      <div class="compare-row">
-        <div class="compare-aspect" data-fr="Créativité">Creativity</div>
-        <div class="compare-old" data-fr="Contraintes physiques">Physical constraints</div>
-        <div class="compare-new" data-fr="Infinie">Infinite</div>
-      </div>
-      <div class="compare-row">
-        <div class="compare-aspect" data-fr="Révisions">Revisions</div>
-        <div class="compare-old" data-fr="Limitées et coûteuses">Limited and costly</div>
-        <div class="compare-new" data-fr="Illimitées">Unlimited</div>
+      <div class="flow-step">
+        <span class="flow-ic"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <h3 data-fr="Livraison">Delivery</h3>
+        <p data-fr="Fichiers prêts à diffuser, tous formats.">Ready-to-publish files, every format.</p>
       </div>
     </div>
   </div>
