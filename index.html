@@ -81,6 +81,9 @@
   .hero .tag{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);margin-bottom:26px}
   .hero .tag::before{content:"";width:34px;height:1px;background:var(--gold)}
   .hero h1{font-size:clamp(2.6rem,4.6vw,4.4rem);margin-bottom:26px;letter-spacing:-.03em;line-height:1.02}
+  .rotate{display:inline-grid;vertical-align:top;overflow:hidden}
+  .rotate span{grid-area:1/1;font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--gold);font-size:1.06em;opacity:0;transform:translateY(.35em);transition:opacity .5s ease,transform .5s ease;white-space:nowrap}
+  .rotate span.on{opacity:1;transform:translateY(0)}
   .hero p.sub{font-size:clamp(1.02rem,1.4vw,1.2rem);color:rgba(244,240,233,.82);max-width:46ch;margin-bottom:38px}
   .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
   .scroll-cue{position:absolute;bottom:30px;left:48px;z-index:3;font-size:.74rem;letter-spacing:2px;text-transform:uppercase;color:rgba(244,240,233,.55)}
@@ -335,7 +338,7 @@
 <header class="hero">
   <div class="hero-inner">
     <div class="tag" data-fr="VISUELS &amp; VIDÉOS IA">AI VISUALS &amp; VIDEOS</div>
-    <h1 data-fr="Je réalise les créatives IA qui font scaler votre marque <em>pendant que vos concurrents cherchent encore comment faire.</em>">I create the AI ads that scale your brand <em>while your competitors are still figuring it out.</em></h1>
+    <h1><span id="heroPre"></span><span class="rotate" id="heroRotate"></span><span id="heroPost"></span></h1>
     <p class="sub" data-fr="Je produis les formats IA que vous n'avez pas le temps de maîtriser, pour scaler plus vite que la concurrence.">I produce the AI formats you don't have time to master, so you can scale faster than the competition.</p>
     <div class="hero-actions">
       <a href="https://calendly.com/zhirichakib/30min" target="_blank" rel="noopener" class="btn" data-fr="Réserver un appel avec Chakib →">Book a call with Chakib →</a>
@@ -597,9 +600,30 @@
   i18nEls.forEach(el=>el.dataset.en=el.innerHTML);
   const langBtn=document.getElementById('langBtn');
   let lang='en';
+  const HERO={
+    fr:{pre:"Je réalise les créatives IA qui ",words:["réduisent votre CPA","augmentent votre ROAS"],post:" pendant que vos concurrents cherchent encore comment faire."},
+    en:{pre:"I create the AI ads that ",words:["reduce your CPA","increase your ROAS"],post:" while your competitors are still figuring it out."}
+  };
+  let heroTimer=null,heroIdx=0;
+  function renderHero(l){
+    const h=HERO[l];
+    document.getElementById('heroPre').textContent=h.pre;
+    document.getElementById('heroPost').textContent=h.post;
+    const rot=document.getElementById('heroRotate');
+    rot.innerHTML=h.words.map((w,i)=>`<span${i===0?' class="on"':''}>${w}</span>`).join('');
+    clearInterval(heroTimer);
+    heroIdx=0;
+    heroTimer=setInterval(()=>{
+      const spans=rot.querySelectorAll('span');
+      spans[heroIdx].classList.remove('on');
+      heroIdx=(heroIdx+1)%spans.length;
+      spans[heroIdx].classList.add('on');
+    },2400);
+  }
   function setLang(l){
     lang=l;
     i18nEls.forEach(el=>el.innerHTML=(l==='fr'?el.dataset.fr:el.dataset.en));
+    renderHero(l);
     document.documentElement.lang=l;
     langBtn.textContent=(l==='fr'?'EN':'FR');
     try{localStorage.setItem('lang',l)}catch(e){}
@@ -608,6 +632,7 @@
     if(op&&PROJECTS[op]){document.getElementById('pmodalCat').textContent=PROJECTS[op].cat[l];document.getElementById('pmodalDesc').textContent=(PROJECTS[op].desc&&PROJECTS[op].desc[l])||''}
   }
   function toggleLang(){setLang(lang==='fr'?'en':'fr')}
+  renderHero(lang);
 
   const PROJECTS={
     merinide:{title:'Mérinide Signature',cat:{en:'Fashion · Art direction',fr:'Mode · Direction artistique'},vid:'1193011537',desc:{fr:"Direction artistique et visuels mode pour Mérinide Signature — une identité élégante et intemporelle traduite en images haut de gamme.",en:"Art direction and fashion visuals for Mérinide Signature — an elegant, timeless identity translated into high-end imagery."},imgs:['assets/merinide/1.png','assets/merinide/2.png','assets/merinide/3.png']},
