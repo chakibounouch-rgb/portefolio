@@ -116,14 +116,15 @@
   .compare-head>div{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding-top:18px;padding-bottom:18px}
   .compare-head .compare-old{color:rgba(244,240,233,.55)}
   .compare-head .compare-new{color:var(--gold)}
-  /* process flow (5 étapes) */
-  .flow{display:flex;margin-top:60px}
-  .flow-step{flex:1;text-align:center;position:relative;padding:0 12px}
-  .flow-ic{width:54px;height:54px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(201,165,114,.1);border:1px solid var(--line);color:var(--gold);position:relative;z-index:2}
-  .flow-ic svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-  .flow-step:not(:last-child)::after{content:"";position:absolute;top:27px;left:calc(50% + 38px);width:calc(100% - 76px);height:1px;background:var(--line);z-index:1}
-  .flow-step h3{margin:20px 0 9px;font-size:1.05rem;color:var(--white)}
-  .flow-step p{font-size:.9rem;line-height:1.55;color:rgba(244,240,233,.5);max-width:200px;margin:0 auto}
+  /* trois façons (3 cartes) */
+  .trois-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:56px;background:var(--bg-2)}
+  .trois-card{padding:44px 40px;border-right:1px solid var(--line)}
+  .trois-card:last-child{border-right:none}
+  .trois-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}
+  .trois-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  .trois-num{font-size:.85rem;color:rgba(244,240,233,.35)}
+  .trois-card h3{font-family:'Instrument Serif',serif;font-weight:400;font-size:1.6rem;margin-bottom:16px;color:var(--white)}
+  .trois-card p{font-size:.95rem;line-height:1.6;color:rgba(244,240,233,.55)}
 
   /* ---------- SECTION ---------- */
   .sec{padding:120px 0}
@@ -279,10 +280,9 @@
     .compare-row{grid-template-columns:.85fr 1fr 1fr}
     .compare-aspect,.compare-old,.compare-new{padding:15px 13px;font-size:.85rem}
     .compare-head>div{font-size:.62rem;letter-spacing:.08em}
-    .flow{flex-direction:column;gap:30px;margin-top:38px}
-    .flow-step{padding:0}
-    .flow-step:not(:last-child)::after{display:none}
-    .flow-step p{max-width:none}
+    .trois-grid{grid-template-columns:1fr;margin-top:34px}
+    .trois-card{border-right:none;border-bottom:1px solid var(--line);padding:32px 26px}
+    .trois-card:last-child{border-bottom:none}
     .hero{grid-template-columns:1fr;min-height:auto}
     .hero-media{order:-1;height:60vh}
     .hero-media img{object-position:50% 16%}
@@ -368,41 +368,30 @@
   </div>
 </div>
 
-<!-- WHY WORK WITH ME -->
+<!-- WHAT I DO -->
 <section class="sec" id="why">
   <div class="wrap">
     <div class="why-head reveal">
       <div>
-        <div class="eyebrow" data-fr="Process">Process</div>
-        <h2 class="sec-title" data-fr="Pensé par l'humain. <em>Accéléré par l'IA.</em>">Crafted by humans. <em>Accelerated by AI.</em></h2>
+        <div class="eyebrow" data-fr="Ce que je fais">What I do</div>
+        <h2 class="sec-title" data-fr="Trois façons de mettre l'IA au travail pour votre marque.">Three ways to put AI to work for your brand.</h2>
       </div>
-      <p class="sec-intro" data-fr="De votre marque à des fichiers prêts à diffuser — un processus clair en 5 étapes.">From your brand to ready-to-publish files — a clear five-step process.</p>
     </div>
-    <div class="flow reveal">
-      <div class="flow-step">
-        <span class="flow-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3"/></svg></span>
-        <h3 data-fr="Compréhension">Understanding</h3>
-        <p data-fr="Votre marque, vos objectifs, votre audience.">Your brand, your goals, your audience.</p>
+    <div class="trois-grid reveal">
+      <div class="trois-card">
+        <div class="trois-top"><span class="trois-label" data-fr="Contenu">Content</span><span class="trois-num">/ 01</span></div>
+        <h3 data-fr="Contenu IA">AI Content</h3>
+        <p data-fr="Vidéos, photos et mannequins IA de qualité shooting pro, livrés en 72h. Prêts à publier, sur tous vos formats.">Videos, photos and AI models with pro-shoot quality, delivered in 72h. Ready to publish, in every format.</p>
       </div>
-      <div class="flow-step">
-        <span class="flow-ic"><svg viewBox="0 0 24 24"><path d="M3 21l3-1L17 9l-2-2L4 18l-1 3z"/><path d="M14 6l4 4"/></svg></span>
-        <h3 data-fr="Direction artistique">Art direction</h3>
-        <p data-fr="Concepts créatifs et choix visuels stratégiques.">Creative concepts and strategic visual choices.</p>
+      <div class="trois-card">
+        <div class="trois-top"><span class="trois-label" data-fr="Systèmes">Systems</span><span class="trois-num">/ 02</span></div>
+        <h3 data-fr="Automatisation &amp; agents IA">Automation &amp; AI agents</h3>
+        <p data-fr="Sites Shopify optimisés, workflows sur-mesure, reporting et tâches chronophages automatisés. Vos process tournent 24/7.">Optimized Shopify sites, custom workflows, reporting and time-consuming tasks automated. Your processes run 24/7.</p>
       </div>
-      <div class="flow-step">
-        <span class="flow-ic"><svg viewBox="0 0 24 24"><path d="M13 2L5 13h6l-1 9 8-12h-6l1-8z"/></svg></span>
-        <h3 data-fr="Production IA">AI production</h3>
-        <p data-fr="Visuels et vidéos générés avec précision.">Visuals and videos generated with precision.</p>
-      </div>
-      <div class="flow-step">
-        <span class="flow-ic"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="8" cy="18" r="2"/></svg></span>
-        <h3 data-fr="Ajustements">Adjustments</h3>
-        <p data-fr="Affinage et déclinaisons selon vos retours.">Refinements and variations based on your feedback.</p>
-      </div>
-      <div class="flow-step">
-        <span class="flow-ic"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>
-        <h3 data-fr="Livraison">Delivery</h3>
-        <p data-fr="Fichiers prêts à diffuser, tous formats.">Ready-to-publish files, every format.</p>
+      <div class="trois-card">
+        <div class="trois-top"><span class="trois-label" data-fr="Growth">Growth</span><span class="trois-num">/ 03</span></div>
+        <h3 data-fr="Growth automatisé">Automated growth</h3>
+        <p data-fr="De la créa à la diffusion : production de pubs, intégration Meta Ads et landing pages, en pipeline automatisé.">From creative to distribution: ad production, Meta Ads integration and landing pages, in an automated pipeline.</p>
       </div>
     </div>
   </div>
